@@ -1,0 +1,20 @@
+<resources>
+    <!-- App Title -->
+    <string name="app_name">LiquidApp</string>
+    <!-- App Title -->
+
+    <!-- Main Page -->
+    <string name="liquid_main_page_tournaments_button">Tournaments</string>
+    <string name="liquid_main_page_games_button">Games</string>
+    <string name="liquid_main_page_players_button">Players</string>
+    <string name="liquid_main_page_store_button">Store</string>
+    <string name="liquid_main_page_new_account_button">New Account</string>
+    <!-- Main Page -->
+
+    <!-- Games -->
+    <string name="liquid_games_title">Liquid Games</string>
+    <!-- Games -->
+
+    <!-- Tournaments -->
+    <!-- Tournaments -->
+</resources>
