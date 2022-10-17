@@ -23,8 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn_games = findViewById(R.id.btn_games);
         btn_games.setOnClickListener(View -> {
-            Toast.makeText(this, "Click on Game", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, GamesActivity.class);
+            startActivity(intent);
+        });
+
+        Button btn_players = findViewById(R.id.btn_players);
+        btn_players.setOnClickListener(View -> {
+            Intent intent = new Intent(this, PlayersActivity.class);
             startActivity(intent);
         });
 
