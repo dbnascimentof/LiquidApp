@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_status"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_circle_outline_24"
+        android:title="@string/liquid_bottom_navigation_menu_status"/>
+
+    <item
+        android:id="@+id/menu_experiences"
+        android:enabled="true"
+        android:icon="@drawable/ic_check_banner_24"
+        android:title="@string/liquid_bottom_navigation_menu_experiences"/>
+
+    <item
+        android:id="@+id/menu_calendar"
+        android:enabled="true"
+        android:icon="@drawable/ic_calendar_24"
+        android:title="@string/liquid_bottom_navigation_menu_calendar"/>
+
+    <item
+        android:id="@+id/menu_store"
+        android:enabled="true"
+        android:icon="@drawable/ic_shopping_bag_24"
+        android:title="@string/liquid_bottom_navigation_menu_store"/>
+
+    <item
+        android:id="@+id/menu_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_24"
+        android:title="@string/liquid_bottom_navigation_menu_more"/>
+</menu>

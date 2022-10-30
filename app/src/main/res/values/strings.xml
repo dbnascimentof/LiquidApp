@@ -11,8 +11,17 @@
     <string name="liquid_main_page_new_account_button">New Account</string>
     <!-- Main Page -->
 
+    <!-- Menu -->
+    <string name="liquid_bottom_navigation_menu_status">Status</string>
+    <string name="liquid_bottom_navigation_menu_experiences">Experiences</string>
+    <string name="liquid_bottom_navigation_menu_calendar">Calendar</string>
+    <string name="liquid_bottom_navigation_menu_store">Store</string>
+    <string name="liquid_bottom_navigation_menu_more">More</string>
+    <!-- Menu -->
+
     <!-- Games -->
     <string name="liquid_games_title">Liquid Games</string>
+    <string name="liquid_store_title">Liquid Store</string>
     <!-- Games -->
 
     <!-- Tournaments -->

@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import br.com.danielfilho.liquidapp.R;
+import br.com.danielfilho.liquidapp.StoreActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,5 +37,28 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // Bottom navigation logic
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(item ->{
+            switch (item.getItemId()) {
+                case R.id.menu_status:
+                    Toast.makeText(this, "Click on Status", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menu_experiences:
+                    Toast.makeText(this, "Click on Experiences", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menu_calendar:
+                    Toast.makeText(this, "Click on Calendar", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menu_store:
+                    Intent storeIntent = new Intent(this, StoreActivity.class);
+                    startActivity(storeIntent);
+                    break;
+                case R.id.menu_more:
+                    Toast.makeText(this, "Click on More", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            return true;
+        });
     }
 }
