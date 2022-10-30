@@ -13,7 +13,7 @@
         android:theme="@style/Theme.LiquidApp"
         tools:targetApi="31">
         <activity
-            android:name=".StoreActivity"
+            android:name=".viewmodel.StoreActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

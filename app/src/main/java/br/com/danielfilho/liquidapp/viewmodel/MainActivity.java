@@ -1,17 +1,12 @@
 package br.com.danielfilho.liquidapp.viewmodel;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
 import br.com.danielfilho.liquidapp.R;
-import br.com.danielfilho.liquidapp.StoreActivity;
 
 public class MainActivity extends AppCompatActivity {
 
