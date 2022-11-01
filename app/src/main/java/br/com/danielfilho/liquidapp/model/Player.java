@@ -1,16 +1,21 @@
 package br.com.danielfilho.liquidapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
     private String name;
     private String nickname;
     private int age;
     private String country;
+    private List<Game> playedGames = new ArrayList<>();
 
-    public Player(String name, String nickname, int age, String country) {
+    public Player(String name, String nickname, int age, String country, Game game) {
         this.name = name;
         this.nickname = nickname;
         this.age = age;
         this.country = country;
+        this.playedGames.add(game);
     }
 
     public String getName() {
@@ -43,5 +48,13 @@ public class Player {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public List<Game> getPlayedGames() {
+        return playedGames;
+    }
+
+    public void setPlayedGames(List<Game> playedGames) {
+        this.playedGames = playedGames;
     }
 }
