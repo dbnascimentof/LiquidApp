@@ -10,12 +10,12 @@ public class Player {
     private String country;
     private List<Game> playedGames = new ArrayList<>();
 
-    public Player(String name, String nickname, int age, String country, Game game) {
+    public Player(String name, String nickname, int age, String country, List<Game> playedGames) {
         this.name = name;
         this.nickname = nickname;
         this.age = age;
         this.country = country;
-        this.playedGames.add(game);
+        this.playedGames = playedGames;
     }
 
     public String getName() {

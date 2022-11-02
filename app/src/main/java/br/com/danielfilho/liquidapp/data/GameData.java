@@ -3,6 +3,8 @@ package br.com.danielfilho.liquidapp.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
+
 import br.com.danielfilho.liquidapp.model.Game;
 
 public final class GameData {
@@ -18,9 +20,27 @@ public final class GameData {
             new Game("Fifa 23", "Playstation 5")
     ));
 
-    //TODO: Remove coding adding items to the list from the get method.
-    //      Every time that the get method is called it duplicates the list items.
     public static List<Game> getLiquidGames() {
         return liquidGames;
+    }
+
+    public static List<Game> getGameByPlatform(String platform) {
+        List<Game> gamesByPlatform = new ArrayList<>();
+
+        // filtering liquidGames to find games from a specific platform,
+        // adding the result to a new list.
+        Stream<Game> gameStream = liquidGames.stream().filter(game -> game.getTitle().equals(platform));
+        gameStream.forEach(gamesByPlatform::add);
+
+        return gamesByPlatform;
+    }
+
+    public static List<Game> getGameByTitle(String title) {
+        List<Game> gamesByTitle = new ArrayList<>();
+
+        Stream<Game> gameStream = liquidGames.stream().filter(game -> game.getTitle().equals(title));
+        gameStream.forEach(gamesByTitle::add);
+
+        return gamesByTitle;
     }
 }
