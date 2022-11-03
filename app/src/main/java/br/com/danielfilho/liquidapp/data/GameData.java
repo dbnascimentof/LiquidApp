@@ -27,8 +27,6 @@ public final class GameData {
     public static List<Game> getGameByPlatform(String platform) {
         List<Game> gamesByPlatform = new ArrayList<>();
 
-        // filtering liquidGames to find games from a specific platform,
-        // adding the result to a new list.
         Stream<Game> gameStream = liquidGames.stream().filter(game -> game.getTitle().equals(platform));
         gameStream.forEach(gamesByPlatform::add);
 
