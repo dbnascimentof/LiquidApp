@@ -28,6 +28,7 @@
     <!-- Store -->
 
     <!-- Game Details Page -->
-    <string name="liquid_player_detail_title">Game Detail Page</string>
+    <string name="liquid_game_detail_title">Game Detail Page</string>
+    <string name="liquid_game_detail_players">Who are playing this game?</string>
     <!-- Game Details Page -->
 </resources>

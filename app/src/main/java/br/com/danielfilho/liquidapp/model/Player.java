@@ -8,14 +8,16 @@ public class Player {
     private String nickname;
     private int age;
     private String country;
+    private int photo;
     private List<Game> playedGames = new ArrayList<>();
 
 
-    public Player(String name, String nickname, int age, String country, List<Game> playedGames) {
+    public Player(String name, String nickname, int age, String country, int photo, List<Game> playedGames) {
         this.name = name;
         this.nickname = nickname;
         this.age = age;
         this.country = country;
+        this.photo = photo;
         this.playedGames = playedGames;
     }
 
@@ -49,6 +51,14 @@ public class Player {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public int getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
     }
 
     public List<Game> getPlayedGames() {

@@ -5,15 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+import br.com.danielfilho.liquidapp.R;
 import br.com.danielfilho.liquidapp.model.Game;
 import br.com.danielfilho.liquidapp.model.Player;
 
 public final class PlayerData {
     private final static List<Player> liquidPlayers = new ArrayList<>(Arrays.asList(
-        new Player("Mikolaj Ogonowski", "Elazer", 24, "Poland", GameData.getGameByTitle("Starcraft")),
-        new Player("Clement Desplanches", "Clem", 20, "France", GameData.getGameByTitle("Starcraft")),
-        new Player("Diego Schwimer", "Kelazhur", 00, "Brazil", GameData.getGameByTitle("Starcraft")),
-        new Player("Grzegorz Komincz", "MaNa", 28, "Poland", GameData.getGameByTitle("Odin Sphere"))
+        new Player("Mikolaj Ogonowski", "Elazer", 24, "Poland", R.drawable.elazer, GameData.getGameByTitle("Starcraft")),
+        new Player("Clement Desplanches", "Clem", 20, "France", R.drawable.clem, GameData.getGameByTitle("Starcraft")),
+        new Player("Diego Schwimer", "Kelazhur", 00, "Brazil", R.drawable.kelazhur, GameData.getGameByTitle("Starcraft")),
+        new Player("Grzegorz Komincz", "MaNa", 28, "Poland", R.drawable. mana, GameData.getGameByTitle("Starcraft")),
+        new Player("Daniel Nascimento", "dnascimento", 34, "Brazil", 0, GameData.getGameByTitle("GTA V"))
     ));
 
     public static List<Player> getPlayers(){
@@ -29,6 +31,14 @@ public final class PlayerData {
     }
 
     public static List<Player> getPlayerByGame(String gameTitle) {
-        return null;
+        List<Player> gamePlayers = new ArrayList<>();
+        for (Player player : liquidPlayers) {
+            for (Game game : player.getPlayedGames()) {
+                if (game.getTitle().equals(gameTitle)) {
+                    gamePlayers.add(player);
+                }
+            }
+        }
+        return gamePlayers;
     }
 }

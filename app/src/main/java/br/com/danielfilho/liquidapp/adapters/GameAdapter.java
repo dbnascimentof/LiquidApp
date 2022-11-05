@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,18 +35,20 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
         CardView gameCard = holder.itemView.findViewById(R.id.card_game);
-        TextView gameTitle = holder.itemView.findViewById(R.id.txt_game_title);
-        TextView gamePlatform = holder.itemView.findViewById(R.id.txt_game_platform);
-
-        gameTitle.setText(liquidGames.get(position).getTitle());
-        gamePlatform.setText(liquidGames.get(position).getPlatform());
-
         gameCard.setOnClickListener(View -> {
             Intent intent = new Intent(gameCard.getContext(), GameDetailActivity.class);
             intent.putExtra("gameId", liquidGames.get(position).getGameId());
             gameCard.getContext().startActivity(intent);
         });
 
+        ImageView gameCover = holder.itemView.findViewById(R.id.img_game_icon);
+        gameCover.setImageResource(liquidGames.get(position).getCoverImage());
+
+        TextView gameTitle = holder.itemView.findViewById(R.id.txt_game_title);
+        gameTitle.setText(liquidGames.get(position).getTitle());
+
+        TextView gamePlatform = holder.itemView.findViewById(R.id.txt_game_platform);
+        gamePlatform.setText(liquidGames.get(position).getPlatform());
     }
 
     @Override
