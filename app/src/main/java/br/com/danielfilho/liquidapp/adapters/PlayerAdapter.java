@@ -3,6 +3,7 @@ package br.com.danielfilho.liquidapp.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,17 +35,21 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.GameViewHo
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
         CardView playerCard = holder.itemView.findViewById(R.id.card_player);
-        TextView playerName = holder.itemView.findViewById(R.id.txt_player_name);
-        TextView playerNickName = holder.itemView.findViewById(R.id.txt_player_nickname);
-        TextView playerCountry = holder.itemView.findViewById(R.id.txt_player_country);
-
-        playerName.setText(liquidPlayers.get(position).getName());
-        playerNickName.setText(liquidPlayers.get(position).getNickname());
-        playerCountry.setText(liquidPlayers.get(position).getCountry());
-
         playerCard.setOnClickListener(View -> {
             Toast.makeText(playerCard.getContext(), "Click on " + liquidPlayers.get(position).getName(),Toast.LENGTH_SHORT).show();
         });
+
+        ImageView playerPhoto = holder.itemView.findViewById(R.id.img_player_image);
+        playerPhoto.setImageResource(liquidPlayers.get(position).getPhoto());
+
+        TextView playerName = holder.itemView.findViewById(R.id.txt_player_name);
+        playerName.setText(liquidPlayers.get(position).getName());
+
+        TextView playerNickname = holder.itemView.findViewById(R.id.txt_player_nickname);
+        playerNickname.setText(liquidPlayers.get(position).getNickname());
+
+        TextView playerCountry = holder.itemView.findViewById(R.id.txt_player_country);
+        playerCountry.setText(liquidPlayers.get(position).getCountry());
     }
 
     @Override
