@@ -10,6 +10,7 @@ public class Player {
     private String country;
     private List<Game> playedGames = new ArrayList<>();
 
+
     public Player(String name, String nickname, int age, String country, List<Game> playedGames) {
         this.name = name;
         this.nickname = nickname;

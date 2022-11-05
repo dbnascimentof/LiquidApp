@@ -2,12 +2,22 @@ package br.com.danielfilho.liquidapp.model;
 
 public class Game {
 
+    private int gameId;
     private String title;
     private String platform;
 
-    public Game(String title, String platform) {
+    public Game(int gameId, String title, String platform) {
+        this.gameId = gameId;
         this.title = title;
         this.platform = platform;
+    }
+
+    public int getGameId() {
+        return gameId;
+    }
+
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
     }
 
     public String getTitle() {

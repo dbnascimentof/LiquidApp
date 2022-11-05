@@ -4,8 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -31,6 +33,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.GameViewHo
 
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
+        CardView playerCard = holder.itemView.findViewById(R.id.card_player);
         TextView playerName = holder.itemView.findViewById(R.id.txt_player_name);
         TextView playerNickName = holder.itemView.findViewById(R.id.txt_player_nickname);
         TextView playerCountry = holder.itemView.findViewById(R.id.txt_player_country);
@@ -39,6 +42,9 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.GameViewHo
         playerNickName.setText(liquidPlayers.get(position).getNickname());
         playerCountry.setText(liquidPlayers.get(position).getCountry());
 
+        playerCard.setOnClickListener(View -> {
+            Toast.makeText(playerCard.getContext(), "Click on " + liquidPlayers.get(position).getName(),Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override

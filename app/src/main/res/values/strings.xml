@@ -21,9 +21,13 @@
 
     <!-- Games -->
     <string name="liquid_games_title">Liquid Games</string>
-    <string name="liquid_store_title">Liquid Store</string>
     <!-- Games -->
 
-    <!-- Tournaments -->
-    <!-- Tournaments -->
+    <!-- Store -->
+    <string name="liquid_store_title">Liquid Store</string>
+    <!-- Store -->
+
+    <!-- Game Details Page -->
+    <string name="liquid_player_detail_title">Game Detail Page</string>
+    <!-- Game Details Page -->
 </resources>

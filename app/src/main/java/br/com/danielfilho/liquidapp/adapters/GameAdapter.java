@@ -1,15 +1,20 @@
 package br.com.danielfilho.liquidapp.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.danielfilho.liquidapp.R;
 import br.com.danielfilho.liquidapp.model.Game;
+import br.com.danielfilho.liquidapp.viewmodel.GameDetailActivity;
 
 public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder>{
 
@@ -28,11 +33,18 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
+        CardView gameCard = holder.itemView.findViewById(R.id.card_game);
         TextView gameTitle = holder.itemView.findViewById(R.id.txt_game_title);
         TextView gamePlatform = holder.itemView.findViewById(R.id.txt_game_platform);
 
         gameTitle.setText(liquidGames.get(position).getTitle());
         gamePlatform.setText(liquidGames.get(position).getPlatform());
+
+        gameCard.setOnClickListener(View -> {
+            Intent intent = new Intent(gameCard.getContext(), GameDetailActivity.class);
+            intent.putExtra("gameId", liquidGames.get(position).getGameId());
+            gameCard.getContext().startActivity(intent);
+        });
 
     }
 
